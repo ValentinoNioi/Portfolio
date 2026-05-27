@@ -1,0 +1,287 @@
+.cinematic-page{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:190px;
+margin-top:-50px;
+overflow:hidden;
+}
+
+.cinematic-left{
+width:35%;
+position:relative;
+}
+
+.cinematic-right{
+width:55%;
+display:flex;
+flex-direction:column;
+gap:30px;
+position:relative;
+}
+
+.cinematic-section{
+padding-bottom:25px;
+border-bottom:1px solid rgba(0,0,0,.1);
+width:90%;
+}
+
+.section-title{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:15px;
+}
+
+.mini-square{
+width:8px;
+height:8px;
+border:1px solid black;
+opacity:.7;
+flex-shrink:0;
+}
+
+.filled-square{
+background:black;
+border:none;
+}
+
+.cinematic-section h3{
+margin:0;
+font-family:'IBM Plex Mono';
+font-size:13px;
+font-weight:400;
+opacity:.65;
+}
+
+.cinematic-section p{
+margin:0 0 14px 0;
+font-size:17px;
+line-height:1.7;
+}
+
+.cinematic-section p:last-child{
+margin-bottom:0;
+}
+
+.cinematic-symbols{
+display:flex;
+align-items:center;
+gap:35px;
+margin-top:50px;
+}
+
+.cinematic-cross{
+font-size:28px;
+opacity:.7;
+}
+
+.materials-note{
+margin-top:6px;
+margin-bottom:120px;
+font-family:'IBM Plex Mono';
+font-size:11px;
+letter-spacing:.5px;
+opacity:.45;
+text-transform:uppercase;
+}
+
+.script-card{
+padding-bottom:35px;
+margin-bottom:35px;
+border-bottom:1px solid rgba(0,0,0,.08);
+}
+
+.script-card:last-child{
+margin-bottom:0;
+border-bottom:none;
+}
+
+.script-card h3{
+margin:0 0 12px 0;
+font-family:'Inter Tight';
+font-size:26px;
+font-weight:500;
+}
+
+.script-type{
+font-family:'IBM Plex Mono';
+font-size:12px!important;
+opacity:.55;
+margin-bottom:12px!important;
+}
+
+.script-focus{
+font-family:'IBM Plex Mono';
+font-size:12px!important;
+opacity:.75;
+margin-bottom:20px!important;
+}
+
+.script-card p{
+font-size:16px;
+line-height:1.7;
+}
+
+.sample-button{
+display:inline-block;
+margin-top:20px;
+font-family:'IBM Plex Mono';
+font-size:12px;
+background:none;
+border:none;
+padding:0;
+cursor:pointer;
+opacity:.65;
+transition:.3s;
+color:black;
+}
+
+.sample-button:hover{
+opacity:1;
+transform:translateX(6px);
+}
+
+.viewer-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:rgba(0,0,0,.18);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:1000;
+backdrop-filter:blur(6px);
+}
+
+.viewer-box{
+width:82%;
+height:90vh;
+background:rgba(245,245,245,.55);
+border:1px solid rgba(0,0,0,.08);
+backdrop-filter:blur(12px);
+padding:35px;
+display:flex;
+flex-direction:column;
+}
+
+.viewer-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+font-family:'IBM Plex Mono';
+font-size:13px;
+color:black;
+}
+
+.viewer-close{
+background:none;
+border:none;
+font-family:'IBM Plex Mono';
+font-size:13px;
+cursor:pointer;
+opacity:.7;
+transition:.3s;
+}
+
+.viewer-close:hover{
+opacity:.4;
+}
+
+.viewer-title{
+font-family:'Inter Tight';
+font-size:28px;
+margin-bottom:25px;
+color:black;
+}
+
+.pdf-container{
+width:100%;
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.pdf-viewer{
+width:84%;
+height:100%;
+background:white;
+border:1px solid rgba(0,0,0,.08);
+}
+
+.viewer-nav{
+display:flex;
+justify-content:space-between;
+margin-top:20px;
+font-family:'IBM Plex Mono';
+font-size:13px;
+opacity:.7;
+color:black;
+}
+
+.first-script{
+margin-top:55px;
+}
+
+@media (max-width: 768px) {
+
+  .cinematic-page {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 0;
+    padding: 20px;
+    overflow: visible;
+  }
+
+  .cinematic-left {
+    width: 100%;
+  }
+
+  .cinematic-symbols {
+    margin-top: 30px;
+  }
+
+  .cinematic-right {
+    width: 100%;
+    gap: 25px;
+  }
+
+  .cinematic-section {
+    width: 100%;
+  }
+
+  .cinematic-section p {
+    font-size: 16px;
+  }
+
+  .materials-note {
+    margin-bottom: 40px;
+  }
+
+  .first-script {
+    margin-top: 20px;
+  }
+
+  .script-card h3 {
+    font-size: 22px;
+  }
+
+  .viewer-box {
+    width: 95%;
+    height: 92vh;
+    padding: 20px;
+  }
+
+  .viewer-title {
+    font-size: 20px;
+  }
+
+  .pdf-viewer {
+    width: 100%;
+  }
+
+}

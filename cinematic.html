@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cinematic Writing | Valentino A. Nioi</title>
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/cinematic.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">
+    <a href="index.html">VN_</a>
+  </div>
+
+  <div class="menu">
+    <a href="about.html">ABOUT</a>
+    <a href="archive.html">ARCHIVE</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+</nav>
+
+
+<section class="cinematic-page">
+
+  <div class="cinematic-left">
+
+    <p class="role">CASE_03</p>
+
+    <h1>CINEMATIC<br>WRITING</h1>
+
+    <p class="description">
+      Scripts, scenes and visual narratives<br>
+      Selected works
+    </p>
+
+    <div class="cinematic-symbols">
+      <div class="cinematic-cross">×</div>
+      <div class="square"></div>
+    </div>
+
+  </div>
+
+
+  <div class="cinematic-right">
+
+    <div class="cinematic-section">
+      <div class="section-title">
+        <div class="mini-square"></div>
+        <h3>OVERVIEW</h3>
+      </div>
+
+      <p>
+        A collection of screenplay excerpts, dialogue studies and cinematic
+        narrative work focused on atmosphere, character voice and visual storytelling.
+      </p>
+    </div>
+
+
+    <div class="cinematic-section">
+
+      <div class="section-title documents-title">
+        <div class="mini-square filled-square"></div>
+        <h3>SELECTED WORKS</h3>
+      </div>
+
+      <p class="materials-note">
+        Selected screenplay excerpts and cinematic narrative samples
+      </p>
+
+      <div class="script-card first-script">
+
+        <h3>FORTUNATE</h3>
+
+        <p class="script-type">
+          TV show Pilot · Sci-Fi/Dramedy
+        </p>
+
+        <p class="script-focus">
+          Friendship · Wonder · Consequences
+        </p>
+
+        <p>
+         A mall cop, a mysterious black cube, and a best friend who asks too many questions. Fortunate is a sci-fi pilot set in 1985 — where the mundane collides with the inexplicable, and two lifelong friends stumble into something neither of them is prepared for.
+        </p>
+
+        <button type="button" class="sample-button" onclick="openSampleViewer()">
+          → OPEN SAMPLE
+        </button>
+
+      </div>
+
+      <div class="script-card">
+
+        <h3>LAIKA</h3>
+
+        <p class="script-type">
+          Animated Short Film · Sci-Fi / Psychological Drama
+        </p>
+
+        <p class="script-focus">
+          Isolation · Human-AI dynamics · Purpose
+        </p>
+
+        <p>
+          A woman alone on an alien planet, her only company a vocal AI she never asked for. A story about solitude, purpose, and what it means to share a fate — loosely inspired by Laika, the dog aboard Sputnik 2.
+        </p>
+
+        <button type="button" class="sample-button" onclick="openLaikaViewer()">
+          → OPEN SAMPLE
+        </button>
+
+      </div>
+
+
+      <div class="script-card">
+
+        <h3>STORY OF A LOVE</h3>
+
+        <p class="script-type">
+          Animated Short Film · Fantasy / Drama
+        </p>
+
+        <p class="script-focus">
+          Memory · Grief · Emotional symbolism
+        </p>
+
+        <p>
+          A boy, a camera with two films left, and a dog he never got to say goodbye to. A dream logic short about grief, memory, and the small thoughts that fill a whole life.
+        </p>
+
+        <button type="button" class="sample-button" onclick="openStoryViewer()">
+          → OPEN SAMPLE
+        </button>
+
+      </div>
+
+
+      
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="viewer-overlay">
+
+  <div class="viewer-box">
+
+    <div class="viewer-top">
+      <p>CASE_03 / CINEMATIC WRITING</p>
+
+      <button type="button" class="viewer-close" onclick="closeViewer()">
+        × CLOSE
+      </button>
+    </div>
+
+    <div class="viewer-title">
+      LAIKA
+    </div>
+
+    <div class="pdf-container"></div>
+
+    <div class="viewer-nav">
+      <p>← PREVIOUS</p>
+      <p>01/01</p>
+      <p>NEXT →</p>
+    </div>
+
+  </div>
+
+</div>
+
+
+<footer>
+  <div class="status-line"></div>
+  <div class="footer-content">
+    <p>■ STATUS: AVAILABLE</p>
+    <p>Narrative Design, Game & cinematic writing</p>
+    <p>valentinonioi@gmail.com ■</p>
+  </div>
+  <p class="footer-privacy">***This site does not collect personal data or use tracking technologies.***</p>
+</footer>
+
+
+<script>
+const viewerTitle = document.querySelector(".viewer-title");
+const viewerOverlay = document.querySelector(".viewer-overlay");
+const pdfContainer = document.querySelector(".pdf-container");
+
+function openPDF(title, file){
+  viewerTitle.innerText = title;
+
+  pdfContainer.innerHTML = `
+    <object class="pdf-viewer" data="${file}" type="application/pdf">
+      <p>Preview unavailable.</p>
+    </object>
+  `;
+
+  viewerOverlay.style.display = "flex";
+}
+
+function openSampleViewer(){
+  openPDF("SAMPLE", "assets/fortunate.pdf");
+}
+
+function openLaikaViewer(){
+  openPDF("LAIKA", "assets/laika.pdf");
+}
+
+function openStoryViewer(){
+  openPDF("STORY OF A LOVE", "assets/soal.pdf");
+}
+
+
+function closeViewer(){
+  viewerOverlay.style.display = "none";
+  pdfContainer.innerHTML = "";
+}
+</script>
+
+</body>
+</html>

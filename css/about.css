@@ -1,0 +1,278 @@
+.about-page{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:140px;
+
+flex:1;
+
+margin-top:-50px;
+
+overflow:hidden;
+
+}
+
+
+.about-left{
+
+width:40%;
+
+}
+
+
+.about-right{
+
+position:relative;
+
+width:50%;
+
+display:flex;
+
+flex-direction:column;
+
+gap:35px;
+
+transform:translateY(-20px);
+
+}
+
+.about-item{
+
+display:grid;
+
+grid-template-columns:40px 1fr;
+
+align-items:start;
+
+}
+
+
+.about-number{
+
+font-family:'IBM Plex Mono';
+
+font-size:13px;
+
+opacity:.5;
+
+}
+
+
+.about-label{
+
+font-family:'IBM Plex Mono';
+
+font-size:12px;
+
+margin:0;
+
+margin-bottom:5px;
+
+}
+
+
+.about-value{
+
+margin:0;
+
+font-size:18px;
+
+line-height:1.4;
+
+}
+
+
+.about-action{
+
+display:flex;
+
+align-items:center;
+
+gap:30px;
+
+margin-top:25px;
+
+}
+
+
+.about-cross{
+
+font-size:28px;
+
+opacity:.7;
+
+}
+
+
+.about-square{
+
+margin-top:0px;
+
+}
+
+
+.about-right::after{
+
+content:"";
+
+position:absolute;
+
+right:-140px;
+top:50%;
+
+transform:translateY(-50%);
+
+width:260px;
+height:320px;
+
+opacity:.36;
+
+background-image:
+radial-gradient(#999 1.1px, transparent 0);
+
+background-size:18px 18px;
+
+pointer-events:none;
+
+}
+
+.about-symbols{
+
+display:flex;
+
+align-items:center;
+
+gap:35px;
+
+margin-top:50px;
+
+}
+
+.viewer-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:rgba(0,0,0,.18);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:1000;
+backdrop-filter:blur(6px);
+}
+
+.viewer-box{
+width:82%;
+height:90vh;
+background:rgba(245,245,245,.55);
+border:1px solid rgba(0,0,0,.08);
+backdrop-filter:blur(12px);
+padding:35px;
+display:flex;
+flex-direction:column;
+}
+
+.viewer-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+font-family:'IBM Plex Mono';
+font-size:13px;
+color:black;
+}
+
+.viewer-close{
+background:none;
+border:none;
+font-family:'IBM Plex Mono';
+font-size:13px;
+cursor:pointer;
+opacity:.7;
+transition:.3s;
+}
+
+.viewer-close:hover{
+opacity:.4;
+}
+
+.viewer-title{
+font-family:'Inter Tight';
+font-size:28px;
+margin-bottom:25px;
+color:black;
+}
+
+.pdf-container{
+width:100%;
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.pdf-viewer{
+width:84%;
+height:100%;
+background:white;
+border:1px solid rgba(0,0,0,.08);
+}
+
+@media (max-width: 768px) {
+
+  .about-page {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 0;
+    padding: 20px;
+    overflow: visible;
+  }
+
+  .about-left {
+    width: 100%;
+  }
+
+  .about-symbols {
+    margin-top: 30px;
+  }
+
+  .about-right {
+    width: 100%;
+    transform: none;
+    gap: 25px;
+  }
+
+  .about-right::after {
+    display: none;
+  }
+
+  .about-value {
+    font-size: 16px;
+  }
+
+  .about-action {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .viewer-box {
+    width: 95%;
+    height: 92vh;
+    padding: 20px;
+  }
+
+  .viewer-title {
+    font-size: 20px;
+  }
+
+  .pdf-viewer {
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,147 @@
+.contact-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 140px;
+  flex: 1;
+  margin-top: -50px;
+  overflow: hidden;
+}
+
+.contact-left {
+  width: 40%;
+}
+
+.contact-right {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  padding-right: 0;
+  transform: translateX(160px);
+}
+
+.contact-item {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: start;
+}
+
+.contact-number {
+  font-family: 'IBM Plex Mono';
+  font-size: 13px;
+  opacity: .5;
+  line-height: 1;
+  padding-top: 1px;
+}
+
+.contact-label {
+  font-family: 'IBM Plex Mono';
+  font-size: 12px;
+  line-height: 1;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.contact-value {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.contact-value a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  transition: .3s;
+}
+
+.contact-cross {
+  font-size: 28px;
+  opacity: .7;
+  margin: 0;
+}
+
+.contact-action {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.contact-square {
+  margin-top: 60px;
+}
+
+.contact-right::after {
+  content: "";
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 260px;
+  height: 340px;
+  opacity: .35;
+  background-image: radial-gradient(#999 1.2px, transparent 0);
+  background-size: 16px 16px;
+  pointer-events: none;
+}
+
+
+/* ─────────────────────────────────────────
+   MOBILE  (≤ 768px)
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  .contact-page {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 0;
+    align-items: flex-start;
+    overflow: visible;
+  }
+
+  /* Intestazione compatta: larghezza piena, si riduce */
+  .contact-left {
+    width: 100%;
+  }
+
+  .contact-left h1 {
+    font-size: 52px;
+    line-height: .9;
+  }
+
+  .contact-left .description {
+    font-size: 12px;
+    margin-top: 16px;
+    line-height: 1.7;
+  }
+
+  /* Il quadratino decorativo sparisce su mobile */
+  .contact-square {
+    display: none;
+  }
+
+  /* La colonna destra torna al suo posto naturale */
+  .contact-right {
+    width: 100%;
+    transform: none;
+    gap: 28px;
+  }
+
+  /* Niente puntini decorativi su mobile */
+  .contact-right::after {
+    display: none;
+  }
+
+  .contact-value,
+  .contact-value a {
+    font-size: 16px;
+  }
+
+  .contact-action {
+    margin-top: 12px;
+  }
+
+}

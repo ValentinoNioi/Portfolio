@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About | Valentino A. Nioi</title>
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/about.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav>
+
+  <div class="logo">
+    <a href="index.html">VN_</a>
+  </div>
+
+  <div class="menu">
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+
+</nav>
+
+
+<section class="about-page">
+
+  <div class="about-left">
+
+    <p class="role">
+      ABOUT_RECORD
+    </p>
+
+    <h1>
+      BUILDING<br>
+      WORLDS<br>
+      THROUGH PLAY
+    </h1>
+
+    <p class="description">
+      Narrative Designer / Game Writer<br>
+      with a background in filmmaking<br>
+      and visual storytelling
+    </p>
+
+    <div class="about-symbols">
+      <div class="about-cross">×</div>
+      <div class="square about-square"></div>
+    </div>
+
+  </div>
+
+
+  <div class="about-right">
+
+    <div class="about-item">
+
+      <span class="about-number">01</span>
+
+      <div>
+
+        <p class="about-label">
+          INTERESTS
+        </p>
+
+        <p class="about-value">
+          I'm more interested in what characters lose<br>
+          than in what they achieve. Consequences,<br>
+          moral exposure and the cost of decisions<br>
+          matter more to me than genre or setting.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="about-item">
+
+      <span class="about-number">02</span>
+
+      <div>
+
+        <p class="about-label">
+          VISUAL LANGUAGE
+        </p>
+
+        <p class="about-value">
+          My background in filmmaking shapes how<br>
+          I approach pacing, scene structure and<br>
+          character moments.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="about-item">
+
+      <span class="about-number">03</span>
+
+      <div>
+
+        <p class="about-label">
+          PROCESS
+        </p>
+
+        <p class="about-value">
+          I work from research outward (folklore, social<br>
+          history, subculture) building narrative systems<br>
+          that feel grounded before they feel fictional.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="about-item">
+
+      <span class="about-number">04</span>
+
+      <div>
+
+        <p class="about-label">
+          APPROACH
+        </p>
+
+        <p class="about-value">
+          I design narrative experiences where player actions,<br>
+          systems and storytelling shape each other.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="about-action">
+
+      <div class="about-cross">×</div>
+
+      <div class="buttons">
+
+        <button type="button"
+        class="button black"
+        onclick="openCVViewer()">
+          OPEN CV
+        </button>
+
+        <a class="button"
+        href="archive.html">
+          OPEN ARCHIVE
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="viewer-overlay">
+
+  <div class="viewer-box">
+
+    <div class="viewer-top">
+      <p>CURRICULUM</p>
+
+      <button type="button"
+      class="viewer-close"
+      onclick="closeViewer()">
+        × CLOSE
+      </button>
+    </div>
+
+    <div class="viewer-title">
+      CURRICULUM VITAE
+    </div>
+
+    <div class="pdf-container"></div>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  <div class="status-line"></div>
+
+  <div class="footer-content">
+    <p>■ STATUS: AVAILABLE</p>
+    <p>Narrative Design, Game & cinematic writing</p>
+    <p>valentinonioi@gmail.com ■</p>
+  </div>
+
+  <p class="footer-privacy">
+    ***This site does not collect personal data or use tracking technologies.***
+  </p>
+
+</footer>
+
+
+<script>
+const viewerTitle = document.querySelector(".viewer-title");
+const viewerOverlay = document.querySelector(".viewer-overlay");
+const pdfContainer = document.querySelector(".pdf-container");
+
+function openPDF(title, file){
+  viewerTitle.innerText = title;
+
+  pdfContainer.innerHTML = `
+    <object class="pdf-viewer" data="${file}" type="application/pdf">
+      <p>Preview unavailable.</p>
+    </object>
+  `;
+
+  viewerOverlay.style.display = "flex";
+}
+
+function openCVViewer(){
+  openPDF("CURRICULUM VITAE", "assets/ValentinoNioi_CV_2026.pdf");
+}
+
+function closeViewer(){
+  viewerOverlay.style.display = "none";
+  pdfContainer.innerHTML = "";
+}
+</script>
+
+</body>
+
+</html>

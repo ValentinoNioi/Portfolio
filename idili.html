@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IDILI | Valentino A. Nioi</title>
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/idili.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+<a href="index.html">VN_</a>
+</div>
+
+<div class="menu">
+<a href="about.html">ABOUT</a>
+<a href="archive.html">ARCHIVE</a>
+<a href="contact.html">CONTACT</a>
+</div>
+
+</nav>
+
+
+<section class="idili-page">
+
+<div class="idili-left">
+
+<p class="role">
+CASE_01
+</p>
+
+<h1>
+IDILI
+</h1>
+
+<p class="description">
+
+<a class="project-link"
+href="https://INSERISCI-LINK"
+target="_blank">
+
+Megalith Interactive Studios
+
+</a>
+
+<br>
+
+Narrative Designer / Game Writer
+
+</p>
+
+<a class="idili-steam"
+href="https://store.steampowered.com/app/2595700/IDILI/"
+target="_blank">
+
+→ OPEN ON STEAM
+
+</a>
+
+<div class="idili-symbols">
+
+<div class="idili-cross">
+×
+</div>
+
+<div class="square"></div>
+
+</div>
+
+<div class="idili-mask">
+
+<img src="assets/idili-mask-ascii.png">
+
+</div>
+
+</div>
+
+
+<div class="idili-right">
+
+<div class="idili-section">
+
+<div class="section-title">
+
+<div class="mini-square"></div>
+
+<h3>
+PROJECT
+</h3>
+
+</div>
+
+<p>
+Psychological horror experience focused on folklore reinterpretation,
+environmental exploration and emotional tension, where ordinary
+individuals confront forces beyond their understanding.
+</p>
+
+</div>
+
+
+<div class="idili-section">
+
+<div class="section-title">
+
+<div class="mini-square"></div>
+
+<h3>
+ROLE
+</h3>
+
+</div>
+
+<p>
+Narrative design · World-building · Dialogue writing ·
+Character writing · Voice direction · Environmental storytelling.
+</p>
+
+</div>
+
+
+<div class="idili-section">
+
+<div class="section-title">
+
+<div class="mini-square"></div>
+
+<h3>
+NARRATIVE APPROACH
+</h3>
+
+</div>
+
+<p>
+I joined an already established project and worked within an
+existing foundation before expanding it. The process involved
+identifying the mythological and social logic already embedded
+in the setting and building outward from there.
+</p>
+
+</div>
+
+
+<div class="idili-section">
+
+<div class="section-title">
+
+<div class="mini-square"></div>
+
+<h3>
+PLAYER PERSPECTIVE
+</h3>
+
+</div>
+
+<p>
+Because player agency is intentionally limited, immersion relied
+on identification rather than empowerment.
+The protagonist was written as an ordinary person whose reactions
+mirror familiar human vulnerability.
+</p>
+
+</div>
+
+
+<div class="idili-section">
+
+<div class="section-title">
+
+<div class="mini-square"></div>
+
+<h3>
+ENVIRONMENTAL STORYTELLING
+</h3>
+
+</div>
+
+<p>
+Working within an already established level design meant treating
+spaces as documents. Locations suggest events that existed long
+before the player's arrival.
+</p>
+
+</div>
+
+
+<div class="idili-section">
+
+<div class="section-title">
+
+<div class="mini-square filled-square"></div>
+
+<h3>
+SELECTED CONSULTABLE DOCUMENTS
+</h3>
+
+</div>
+
+<div class="materials-grid">
+
+<div class="material-card"
+onclick="openScriptViewer()">
+
+<p class="material-title">
+Script Samples
+</p>
+
+<p>
+Edited screenplay-style excerpts focused on dialogue,
+tension and character dynamics.
+</p>
+
+</div>
+
+
+<div class="material-card"
+onclick="openCharacterViewer()">
+
+<p class="material-title">
+Character Profiles
+</p>
+
+<p>
+Protagonist and antagonist profiles including motivation,
+conflict and voice design.
+</p>
+
+</div>
+
+
+<div class="material-card"
+onclick="openWorldViewer()">
+
+<p class="material-title">
+World-building Approach
+</p>
+
+<p>
+Selected design notes exploring folklore,
+environment and narrative systems.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<div class="viewer-overlay">
+
+<div class="viewer-box">
+
+<div class="viewer-top">
+
+<p>
+CASE_01 / IDILI
+</p>
+
+<button class="viewer-close"
+onclick="closeViewer()">
+
+× CLOSE
+
+</button>
+
+</div>
+
+<div class="viewer-title">
+SCRIPT SAMPLE_01
+</div>
+
+<div class="pdf-container"></div>
+
+<div class="viewer-nav">
+
+<p>← PREVIOUS</p>
+<p>01/04</p>
+<p>NEXT →</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<div class="status-line"></div>
+
+<div class="footer-content">
+
+<p>■ STATUS: AVAILABLE</p>
+
+<p>Narrative Design, Game & cinematic writing</p>
+
+<p>valentinonioi@gmail.com ■</p>
+
+</div>
+
+<p class="footer-privacy">
+***This site does not collect personal data or use tracking technologies.***
+</p>
+
+</footer>
+
+
+<script>
+
+const viewerTitle=document.querySelector(".viewer-title");
+const viewerOverlay=document.querySelector(".viewer-overlay");
+const pdfContainer=document.querySelector(".pdf-container");
+
+function openPDF(title,file){
+
+viewerTitle.innerText=title;
+
+pdfContainer.innerHTML=`
+<object class="pdf-viewer"
+data="${file}"
+type="application/pdf">
+
+<p>Preview unavailable.</p>
+
+</object>
+`;
+
+viewerOverlay.style.display="flex";
+
+}
+
+function openScriptViewer(){
+
+openPDF(
+"SCRIPT SAMPLE_01",
+"assets/script-sample.pdf"
+);
+
+}
+
+function openCharacterViewer(){
+
+openPDF(
+"CHARACTER PROFILES",
+"assets/characters.pdf"
+);
+
+}
+
+function openWorldViewer(){
+
+openPDF(
+"WORLD-BUILDING APPROACH",
+"assets/worldbuilding.pdf"
+);
+
+}
+
+function closeViewer(){
+
+viewerOverlay.style.display="none";
+
+pdfContainer.innerHTML="";
+
+}
+
+</script>
+
+</body>
+</html>

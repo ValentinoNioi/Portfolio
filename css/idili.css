@@ -1,0 +1,372 @@
+.idili-page{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:clamp(60px, 8vw, 190px);
+margin-top:-50px;
+overflow:hidden;
+position:relative;
+}
+
+.idili-left{
+width:35%;
+position:relative;
+}
+
+.idili-right{
+width:55%;
+display:flex;
+flex-direction:column;
+gap:30px;
+position:relative;
+}
+
+.idili-section{
+padding-bottom:25px;
+border-bottom:1px solid rgba(0,0,0,.1);
+width:100%;
+}
+
+.section-title{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:15px;
+}
+
+.mini-square{
+width:8px;
+height:8px;
+border:1px solid black;
+opacity:.7;
+flex-shrink:0;
+}
+
+.idili-section h3{
+margin:0;
+font-family:'IBM Plex Mono';
+font-size:13px;
+font-weight:400;
+opacity:.65;
+}
+
+.idili-section p{
+margin:0;
+font-size:17px;
+line-height:1.7;
+}
+
+.idili-steam{
+display:inline-block;
+margin-top:15px;
+font-family:'IBM Plex Mono';
+font-size:13px;
+text-decoration:none;
+color:black;
+opacity:.7;
+transition:.3s;
+}
+
+.idili-steam:hover{
+opacity:.4;
+}
+
+.idili-symbols{
+display:flex;
+align-items:center;
+gap:35px;
+margin-top:50px;
+}
+
+.idili-cross{
+font-size:28px;
+opacity:.7;
+}
+
+.materials-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+margin-top:10px;
+}
+
+.material-title{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+font-family:'IBM Plex Mono';
+font-size:16px!important;
+font-weight:500;
+
+letter-spacing:.5px;
+
+margin-bottom:18px!important;
+
+}
+
+.material-card p{
+font-size:15px;
+line-height:1.5;
+}
+
+.idili-right::after{
+content:"";
+position:absolute;
+
+right:clamp(-80px, -4vw, -30px);
+
+top:50%;
+transform:translateY(-50%);
+
+width:clamp(180px, 16vw, 250px);
+
+height:320px;
+opacity:.2;
+
+background-image:
+radial-gradient(#777 1px, transparent 0);
+
+background-size:18px 18px;
+
+mask-image:
+radial-gradient(
+ellipse at center,
+black 30%,
+transparent 85%
+);
+
+-webkit-mask-image:
+radial-gradient(
+ellipse at center,
+black 30%,
+transparent 85%
+);
+
+pointer-events:none;
+}
+
+.viewer-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:rgba(0,0,0,.18);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:1000;
+backdrop-filter:blur(6px);
+}
+
+.viewer-box{
+width:82%;
+height:90vh;
+background:rgba(245,245,245,.55);
+border:1px solid rgba(0,0,0,.08);
+backdrop-filter:blur(12px);
+padding:35px;
+display:flex;
+flex-direction:column;
+}
+
+.viewer-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+font-family:'IBM Plex Mono';
+font-size:13px;
+color:black;
+}
+
+.viewer-close{
+background:none;
+border:none;
+font-family:'IBM Plex Mono';
+font-size:13px;
+cursor:pointer;
+opacity:.7;
+transition:.3s;
+}
+
+.viewer-close:hover{
+opacity:.4;
+}
+
+.viewer-title{
+font-family:'Inter Tight';
+font-size:28px;
+margin-bottom:25px;
+color:black;
+}
+
+.pdf-container{
+width:100%;
+flex:1;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+}
+
+.pdf-viewer{
+
+width:80%;
+height:100%;
+
+background:white;
+
+border:1px solid rgba(0,0,0,.08);
+
+}
+
+.viewer-nav{
+display:flex;
+justify-content:space-between;
+margin-top:20px;
+font-family:'IBM Plex Mono';
+font-size:13px;
+opacity:.7;
+color:black;
+}
+
+.material-card{
+
+background:rgba(0,0,0,.025);
+
+padding:30px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.material-card:hover{
+
+transform:translateY(-3px);
+
+background:rgba(0,0,0,.05);
+
+}
+
+.filled-square{
+
+background:black;
+border:none;
+
+}
+
+.idili-mask{
+
+position:absolute;
+
+left:-120px;
+
+top:300px;
+
+width:950px;
+
+opacity:0.5;
+
+pointer-events:none;
+
+user-select:none;
+
+z-index:-1;
+
+}
+
+.idili-mask img{
+
+width:100%;
+display:block;
+
+filter:grayscale(100%);
+
+}
+
+.project-link{
+
+text-decoration:none;
+color:black;
+
+opacity:.6;
+
+transition:.3s;
+
+}
+
+.project-link:hover{
+
+opacity:1;
+
+}
+
+@media (max-width: 768px) {
+
+  .idili-page {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 0;
+    padding: 20px;
+    overflow: visible;
+  }
+
+  .idili-left {
+    width: 100%;
+  }
+
+  .idili-symbols {
+    margin-top: 30px;
+  }
+
+  .idili-right {
+    width: 100%;
+    gap: 25px;
+  }
+
+  .idili-right::after {
+    display: none;
+  }
+
+  .idili-section {
+    width: 100%;
+  }
+
+  .idili-section p {
+    font-size: 16px;
+  }
+
+  .materials-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .material-card {
+    padding: 20px;
+  }
+
+  .viewer-box {
+    width: 95%;
+    height: 92vh;
+    padding: 20px;
+  }
+
+  .viewer-title {
+    font-size: 20px;
+  }
+
+  .pdf-viewer {
+    width: 100%;
+  }
+
+  .idili-mask {
+    display: none;
+  }
+
+}

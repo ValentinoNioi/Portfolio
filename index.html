@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentino A. Nioi</title>
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/home.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">
+    VN_
+  </div>
+
+  <div class="menu">
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+</nav>
+
+
+<section class="hero">
+
+  <div class="left">
+
+    <p class="role">
+      NARRATIVE DESIGNER / GAME WRITER
+    </p>
+
+    <h1>
+      VALENTINO<br>
+      A. NIOI
+    </h1>
+
+    <p class="description">
+      Designing narrative experiences through
+      player choice, dialogue systems
+      and cinematic storytelling.
+    </p>
+
+    <div class="buttons">
+
+      <a class="button black" href="archive.html">
+        OPEN ARCHIVE
+      </a>
+
+      <button type="button" class="button" onclick="openCVViewer()">
+        OPEN CV
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="right">
+
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+    <div class="story">
+
+      <p class="story-label">
+        STORY EXISTS BETWEEN:
+      </p>
+
+      <h2>
+        CHOICES
+        <span class="story-cross">&</span>
+        CONSEQUENCES
+      </h2>
+
+      <div class="square"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="viewer-overlay">
+
+  <div class="viewer-box">
+
+    <div class="viewer-top">
+      <p>CURRICULUM</p>
+
+      <button type="button" class="viewer-close" onclick="closeViewer()">
+        × CLOSE
+      </button>
+    </div>
+
+    <div class="viewer-title">
+      CURRICULUM VITAE
+    </div>
+
+    <div class="pdf-container"></div>
+
+  </div>
+
+</div>
+
+
+<footer>
+  <div class="status-line"></div>
+  <div class="footer-content">
+    <p>■ STATUS: AVAILABLE</p>
+    <p>Narrative Design, Game & cinematic writing</p>
+    <p>valentinonioi@gmail.com ■</p>
+  </div>
+  <p class="footer-privacy">***This site does not collect personal data or use tracking technologies.***</p>
+</footer>
+
+
+<script>
+const viewerTitle = document.querySelector(".viewer-title");
+const viewerOverlay = document.querySelector(".viewer-overlay");
+const pdfContainer = document.querySelector(".pdf-container");
+
+function openPDF(title, file){
+  viewerTitle.innerText = title;
+
+  pdfContainer.innerHTML = `
+    <object class="pdf-viewer" data="${file}" type="application/pdf">
+      <p>Preview unavailable.</p>
+    </object>
+  `;
+
+  viewerOverlay.style.display = "flex";
+}
+
+function openCVViewer(){
+  openPDF("CURRICULUM VITAE", "assets/ValentinoNioi_CV_2026.pdf");
+}
+
+function closeViewer(){
+  viewerOverlay.style.display = "none";
+  pdfContainer.innerHTML = "";
+}
+</script>
+
+</body>
+</html>
