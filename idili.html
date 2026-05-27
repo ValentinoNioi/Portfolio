@@ -324,61 +324,47 @@ SCRIPT SAMPLE_01
 
 <script>
 
-const viewerTitle=document.querySelector(".viewer-title");
-const viewerOverlay=document.querySelector(".viewer-overlay");
-const pdfContainer=document.querySelector(".pdf-container");
+const viewerTitle = document.querySelector(".viewer-title");
+const viewerOverlay = document.querySelector(".viewer-overlay");
+const pdfContainer = document.querySelector(".pdf-container");
 
-function openPDF(title,file){
+function isMobile(){
+  return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
 
-viewerTitle.innerText=title;
+function openPDF(title, file){
 
-pdfContainer.innerHTML=`
-<object class="pdf-viewer"
-data="${file}"
-type="application/pdf">
+  viewerTitle.innerText = title;
 
-<p>Preview unavailable.</p>
+  // 📱 MOBILE → apertura nativa (fix Android)
+  if (isMobile()) {
+    window.open(file, "_blank");
+    return;
+  }
 
-</object>
-`;
+  // 💻 DESKTOP → viewer interno
+  pdfContainer.innerHTML = `
+    <iframe class="pdf-viewer" src="${file}"></iframe>
+  `;
 
-viewerOverlay.style.display="flex";
-
+  viewerOverlay.style.display = "flex";
 }
 
 function openScriptViewer(){
-
-openPDF(
-"SCRIPT SAMPLE_01",
-"assets/script-sample.pdf"
-);
-
+  openPDF("SCRIPT SAMPLE_01", "assets/script-sample.pdf");
 }
 
 function openCharacterViewer(){
-
-openPDF(
-"CHARACTER PROFILES",
-"assets/characters.pdf"
-);
-
+  openPDF("CHARACTER PROFILES", "assets/characters.pdf");
 }
 
 function openWorldViewer(){
-
-openPDF(
-"WORLD-BUILDING APPROACH",
-"assets/worldbuilding.pdf"
-);
-
+  openPDF("WORLD-BUILDING APPROACH", "assets/worldbuilding.pdf");
 }
 
 function closeViewer(){
-
-viewerOverlay.style.display="none";
-
-pdfContainer.innerHTML="";
-
+  viewerOverlay.style.display = "none";
+  pdfContainer.innerHTML = "";
 }
 
 </script>
