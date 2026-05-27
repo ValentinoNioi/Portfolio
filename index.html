@@ -129,13 +129,23 @@ const viewerTitle = document.querySelector(".viewer-title");
 const viewerOverlay = document.querySelector(".viewer-overlay");
 const pdfContainer = document.querySelector(".pdf-container");
 
+function isMobileDevice(){
+  return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
 function openPDF(title, file){
+
   viewerTitle.innerText = title;
 
+  // 📱 MOBILE → apertura nativa (più affidabile)
+  if (isMobileDevice()) {
+    window.open(file, "_blank");
+    return;
+  }
+
+  // 💻 DESKTOP → viewer interno stabile
   pdfContainer.innerHTML = `
-    <object class="pdf-viewer" data="${file}" type="application/pdf">
-      <p>Preview unavailable.</p>
-    </object>
+    <iframe class="pdf-viewer" src="${file}"></iframe>
   `;
 
   viewerOverlay.style.display = "flex";
