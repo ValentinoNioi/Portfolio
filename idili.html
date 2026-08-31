@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -203,13 +204,15 @@ before the player's arrival.
 <div class="mini-square filled-square"></div>
 
 <h3>
-SELECTED DOCUMENTS — AVAILABLE UPON REQUEST, DOWNLOADS UNAVAILABLE DUE TO UPCOMING RELEASES</h3>
+SELECTED DOCUMENTS — AVAILABLE UPON REQUEST, DOWNLOADS UNAVAILABLE DUE TO UPCOMING RELEASES
+</h3>
 
 </div>
 
+
 <div class="materials-grid">
 
-<div class="material-card"
+<div class="material-card">
 
 <p class="material-title">
 Script Samples
@@ -223,7 +226,7 @@ tension and character dynamics.
 </div>
 
 
-<div class="material-card"
+<div class="material-card">
 
 <p class="material-title">
 Character Profiles
@@ -238,7 +241,7 @@ conflict and voice design.
 
 
 <div class="material-card"
-onclick="openScriptViewer()">
+onclick="openWorldViewer()">
 
 <p class="material-title">
 World-building Approach [AVAILABLE]
@@ -271,7 +274,7 @@ CASE_01 / IDILI
 </p>
 
 <button class="viewer-close"
-onclick="closeViewer()">
+onclick="closeViewer">
 
 × CLOSE
 
@@ -320,6 +323,7 @@ SCRIPT SAMPLE_01
 
 
 <script>
+
 const viewerTitle = document.querySelector(".viewer-title");
 const viewerOverlay = document.querySelector(".viewer-overlay");
 const pdfContainer = document.querySelector(".pdf-container");
@@ -332,13 +336,13 @@ function openPDF(title, file){
 
   viewerTitle.innerText = title;
 
-  // 📱 MOBILE → apertura nativa (più affidabile)
+  // MOBILE → apertura nativa
   if (isMobileDevice()) {
     window.open(file, "_blank");
     return;
   }
 
-  // 💻 DESKTOP → viewer interno stabile
+  // DESKTOP → viewer interno
   pdfContainer.innerHTML = `
     <iframe class="pdf-viewer" src="${file}"></iframe>
   `;
@@ -367,3 +371,4 @@ function closeViewer(){
 
 </body>
 </html>
+```
